@@ -1,0 +1,4 @@
+<launch>
+  <arg name="model_args" default="" />
+  <include file="$(find robotiq_gazebo)/launch/atlas_robotiq_hands_state_publishers.launch"/>
+</launch>

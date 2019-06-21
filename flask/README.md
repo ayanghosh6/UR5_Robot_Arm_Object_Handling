@@ -1,3 +1,14 @@
+
+
+This is modified version of (https://github.com/3SpheresRoboticsProject/flask_ask_ros)
+
+
+---
+
+The following is the original description for Flask_Ask_ROS package
+
+----------
+
 # flask_ask_ros
 A locally hosted web service + ROS node for custom Alexa skills based on [Flask-Ask](https://github.com/johnwheeler/flask-ask).
 

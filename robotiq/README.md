@@ -12,11 +12,6 @@ This pakcage combines the followings with necessary modifications:
 
 ## Installation
 
-##### Clone the package: 
-	
-	git clone https://inmojang@bitbucket.org/inmojang/robotiq.git
-
-##### Things required as in http://wiki.ros.org/robotiq :
 
 Once cloned, 
 	

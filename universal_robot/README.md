@@ -1,11 +1,5 @@
 # Universal Robot Package for RAIN
 
-## Version Information
-
-Version 1.1 uses effort_controllers for joint control of UR5. (Ver 1.0 uses position_controllers). 
-This update enables the gazebo model to pick and grasp an object in the gazebo environment. 
-In Ver 1.0, this was not the case. 
-Instead, it becomes necessary to set PID gains, which were just set by trial and errors in this version.
 
 ## Overview
 
@@ -22,34 +16,15 @@ Install the required dependencies as follows:
 	
 ##### Then, install
 
-	git clone https://inmojang@bitbucket.org/rain_epsrc/universal_robot.git
+	git clone https://github.com/ayanghosh6/UR5_Robot_Arm_Object_Handling inside catkin workspace  (http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
 	
 	
 	
 ## Changes/Additions
 
-### (1) Addition of Gazebo UR model controller
 
-#### Background
-For some reasons, it would be desirable to test and evaluate a python/c++ controller (e.g., a passivity-based teleoepration controller) for a real hardware robot, by using the corresponding gazebo model in simulation. 
-To this end, the gazebo model should have the same interface as that of the real robot. If you want to control the robot using Movit, then using the existing universal robot package seems fine. 
-However, for haptic teleoperation research, it is required to allow the gazebo model to be controlled via a python controller that we are going to develop for the real robot. 
-Although the existing package does not have such an interface explicitly, it is quite straightforward to do so by modifying one line in test_move.py, which was originally developed to control the real hardware. 
-The modified file is named here "gazebo_move.py", and its modified line is as follows. 
-	
-	
-		# client = actionlib.SimpleActionClient('follow_joint_trajectory', FollowJointTrajectoryAction)
-        client = actionlib.SimpleActionClient('/arm_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
-        
-		
-#### Usage
 
-How to use "gazebo_move.py" is identical to that of "test_move.py". After launching the gazebo model, 
-
-		rosrun ur_driver gazebo_move.py
-	
-
-### (2) Addition of forward/inverse kinematics (using a python wrapper based on boost numpy)
+### (1) Addition of forward/inverse kinematics (using a python wrapper based on boost numpy)
 Some files are extracted from http://wiki.ros.org/ur_kin_py and https://github.com/ndarray/Boost.NumPy
 
 #### Usage
@@ -63,11 +38,9 @@ Please refer to http://wiki.ros.org/ur_kin_py
 		b = kin.inverse(a)
 		print b
 
-### (3) End effector position control via LEAP motion (15 Oct 2018)
 
-		rosrun ur_driver gazebo_teleop_leap.py
 
-### (4) UR modern driver added (22 Oct 2018)
+### (2) UR modern driver added (22 Oct 2018)
 
 The new driver (https://github.com/ros-industrial/ur_modern_driver) was added as shown in Section 3.5 in http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial
 

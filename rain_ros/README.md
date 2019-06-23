@@ -1,4 +1,4 @@
-# Haptic Teleoperation in RAIN hub project
+# Language based Teleoperation in RAIN hub project
 ---
 ## Overview
 This is a repository of language based-teleoperated industrial robotic manipulators in RAIN hub project (https://rainhub.org.uk/). 
